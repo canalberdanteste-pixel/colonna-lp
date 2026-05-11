@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Colonna Company — Marketing para Contractors Brasileiros nos EUA</title>
+<meta name="description" content="Líder em geração de leads para contractors brasileiros nos Estados Unidos. Top 1 no Google, landing page profissional, autoridade social e branding completo." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   TOKENS — Cinza Blue + Creme
+   ========================================================================== */
+:root{
+  --noite:        #161A22;   /* fundo principal */
+  --noite-2:      #1F242F;   /* fundo seção alternada */
+  --grafite:      #252A35;   /* cards */
+  --linha:        #2F3441;   /* bordas */
+  --azul-mudo:    #8A8EA4;   /* texto suporte */
+  --azul-suave:   #C8CDD8;   /* texto body */
+  --creme:        #E5DCC3;   /* acento primário */
+  --creme-claro:  #F2EBD6;   /* highlight */
+  --offwhite:     #F7F4EE;   /* texto principal */
+  --shadow-deep:  0 30px 80px rgba(0,0,0,.45);
+  --shadow-soft:  0 12px 40px rgba(0,0,0,.25);
+  --serif:        'Cormorant Garamond', Georgia, serif;
+  --sans:         'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono:         'JetBrains Mono', ui-monospace, monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--noite);
+  color:var(--offwhite);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+/* grain overlay */
+body::before{
+  content:'';
+  position:fixed; inset:0;
+  pointer-events:none;
+  z-index:1;
+  background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/></svg>");
+  opacity:.04;
+  mix-blend-mode:overlay;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+em{font-style:italic;color:var(--creme)}
+
+/* ==========================================================================
+   NAV
+   ========================================================================== */
+.nav{
+  position:fixed; top:0; left:0; right:0;
+  z-index:100;
+  padding:18px 48px;
+  display:flex; align-items:center; justify-content:space-between;
+  backdrop-filter:blur(20px) saturate(140%);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
+  background:rgba(22,26,34,.72);
+  border-bottom:1px solid rgba(47,52,65,.6);
+  transition:padding .3s ease;
+}
+.nav.scrolled{padding:12px 48px}
+.nav-logo{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  color:var(--offwhite);
+}
+.nav-logo em{font-style:italic;color:var(--creme);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{
+  font-size:.82rem;
+  font-weight:500;
+  letter-spacing:.06em;
+  color:var(--azul-suave);
+  text-transform:uppercase;
+  transition:color .25s ease;
+}
+.nav-links a:hover{color:var(--creme)}
+.nav-cta{
+  font-family:var(--sans);
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:12px 24px;
+  background:var(--creme);
+  color:var(--noite);
+  border:none;
+  border-radius:2px;
+  cursor:pointer;
+  transition:all .25s ease;
+}
+.nav-cta:hover{background:var(--creme-claro);transform:translateY(-1px)}
+@media(max-width:900px){
+  .nav{padding:14px 20px}
+  .nav-links{display:none}
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  padding:160px 48px 100px;
+  display:flex; flex-direction:column; justify-content:center;
+  overflow:hidden;
+  z-index:2;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  right:-15%; top:50%;
+  width:80vh; height:80vh;
+  transform:translateY(-50%);
+  background:radial-gradient(circle, rgba(229,220,195,.06) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-container{
+  max-width:1340px;
+  margin:0 auto;
+  width:100%;
+  position:relative;
+  z-index:2;
+}
+.hero-eyebrow{
+  font-family:var(--mono);
+  font-size:.75rem;
+  font-weight:400;
+  letter-spacing:.18em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:32px;
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+}
+.hero-eyebrow::before{
+  content:'';
+  width:32px; height:1px;
+  background:var(--creme);
+}
+.hero-title{
+  font-family:var(--serif);
+  font-size:clamp(2.6rem, 6.8vw, 6.5rem);
+  font-weight:400;
+  line-height:1.02;
+  letter-spacing:-.018em;
+  color:var(--offwhite);
+  max-width:1180px;
+  margin-bottom:40px;
+}
+.hero-title strong{
+  font-weight:500;
+  color:var(--creme);
+}
+.hero-title em{
+  font-style:italic;
+  font-weight:300;
+}
+.hero-sub{
+  font-family:var(--sans);
+  font-size:clamp(1rem, 1.4vw, 1.2rem);
+  font-weight:400;
+  line-height:1.55;
+  color:var(--azul-suave);
+  max-width:640px;
+  margin-bottom:48px;
+}
+.hero-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.btn-primary{
+  font-family:var(--sans);
+  font-size:.88rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:18px 36px;
+  background:var(--creme);
+  color:var(--noite);
+  border:none;
+  border-radius:2px;
+  cursor:pointer;
+  transition:all .3s cubic-bezier(.2,.8,.2,1);
+  display:inline-flex; align-items:center; gap:12px;
+}
+.btn-primary:hover{background:var(--creme-claro);transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.btn-primary svg{transition:transform .3s ease}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-ghost{
+  font-family:var(--sans);
+  font-size:.88rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  color:var(--offwhite);
+  padding:18px 6px;
+  border-bottom:1px solid var(--linha);
+  transition:border-color .25s ease, color .25s ease;
+}
+.btn-ghost:hover{border-color:var(--creme);color:var(--creme)}
+
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:60px;
+  margin-top:96px;
+  padding-top:48px;
+  border-top:1px solid var(--linha);
+  max-width:900px;
+}
+.stat-num{
+  font-family:var(--serif);
+  font-size:clamp(2rem, 4vw, 3.2rem);
+  font-weight:400;
+  color:var(--creme);
+  line-height:1;
+  margin-bottom:10px;
+}
+.stat-label{
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--azul-mudo);
+}
+@media(max-width:760px){
+  .hero{padding:140px 20px 80px;min-height:auto}
+  .hero-stats{grid-template-columns:1fr;gap:32px;margin-top:64px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .btn-primary,.btn-ghost{justify-content:center;text-align:center}
+}
+
+/* ==========================================================================
+   MARQUEE
+   ========================================================================== */
+.marquee-wrap{
+  position:relative;
+  z-index:2;
+  background:var(--noite);
+  border-top:1px solid var(--linha);
+  border-bottom:1px solid var(--linha);
+  padding:0;
+  overflow:hidden;
+}
+.marquee{
+  display:flex;
+  white-space:nowrap;
+  padding:28px 0;
+  animation:scroll 38s linear infinite;
+}
+.marquee.reverse{
+  animation:scroll-rev 32s linear infinite;
+  border-top:1px solid var(--linha);
+}
+.marquee span{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(1.4rem, 3vw, 2.6rem);
+  font-weight:400;
+  color:var(--offwhite);
+  padding:0 32px;
+  display:inline-flex;
+  align-items:center;
+  gap:32px;
+}
+.marquee span::after{
+  content:'•';
+  color:var(--creme);
+  font-style:normal;
+}
+.marquee.reverse span{color:var(--creme)}
+.marquee.reverse span::after{color:var(--offwhite)}
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+@keyframes scroll-rev{
+  from{transform:translateX(-50%)}
+  to{transform:translateX(0)}
+}
+
+/* ==========================================================================
+   ALERT (urgency)
+   ========================================================================== */
+.alert{
+  position:relative;
+  z-index:2;
+  background:var(--noite-2);
+  padding:120px 48px;
+  text-align:center;
+  border-bottom:1px solid var(--linha);
+}
+.alert-container{max-width:1100px;margin:0 auto}
+.alert-eyebrow{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.24em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:28px;
+  display:inline-flex;
+  gap:14px;
+  align-items:center;
+}
+.alert-eyebrow::before, .alert-eyebrow::after{
+  content:'';
+  width:42px; height:1px;
+  background:var(--creme);
+}
+.alert-title{
+  font-family:var(--serif);
+  font-size:clamp(2rem, 4.8vw, 4.2rem);
+  font-weight:400;
+  line-height:1.08;
+  color:var(--offwhite);
+  letter-spacing:-.012em;
+}
+.alert-title strong{font-weight:500;color:var(--creme)}
+.alert-title em{font-style:italic;font-weight:300;color:var(--creme-claro)}
+
+/* ==========================================================================
+   FORM SECTION (process explanation)
+   ========================================================================== */
+.formflow{
+  position:relative;
+  z-index:2;
+  padding:140px 48px;
+  background:var(--noite);
+}
+.formflow-container{
+  max-width:1340px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.formflow-eyebrow{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.18em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:24px;
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+}
+.formflow-eyebrow::before{content:'';width:32px;height:1px;background:var(--creme)}
+.formflow h2{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight:400;
+  line-height:1.05;
+  color:var(--offwhite);
+  margin-bottom:24px;
+  letter-spacing:-.012em;
+}
+.formflow h2 em{font-style:italic;color:var(--creme)}
+.formflow-intro{
+  font-size:1rem;
+  color:var(--azul-suave);
+  line-height:1.7;
+  margin-bottom:48px;
+  max-width:520px;
+}
+.formflow-steps{display:flex;flex-direction:column;gap:36px}
+.step{
+  display:flex;
+  gap:28px;
+  padding-bottom:32px;
+  border-bottom:1px solid var(--linha);
+}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.step-num{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:2rem;
+  font-weight:300;
+  color:var(--creme);
+  line-height:1;
+  flex-shrink:0;
+  padding-top:4px;
+}
+.step-content h3{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-weight:500;
+  color:var(--offwhite);
+  margin-bottom:10px;
+  letter-spacing:-.01em;
+}
+.step-content p{
+  font-size:.94rem;
+  color:var(--azul-suave);
+  line-height:1.7;
+}
+.formflow-visual{
+  position:relative;
+  aspect-ratio:4/5;
+  background:linear-gradient(135deg, var(--grafite), var(--noite-2));
+  border:1px solid var(--linha);
+  border-radius:4px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.formflow-visual::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(229,220,195,.08), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(200,205,216,.05), transparent 50%);
+}
+.formflow-visual-content{
+  position:relative;
+  text-align:center;
+  padding:48px;
+}
+.formflow-visual-content svg{
+  width:80px;
+  height:80px;
+  margin:0 auto 32px;
+  display:block;
+  color:var(--creme);
+  opacity:.85;
+}
+.formflow-visual-content .v-label{
+  font-family:var(--mono);
+  font-size:.7rem;
+  letter-spacing:.2em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+.formflow-visual-content .v-text{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.5rem;
+  color:var(--offwhite);
+  line-height:1.4;
+}
+@media(max-width:900px){
+  .formflow{padding:100px 20px}
+  .formflow-container{grid-template-columns:1fr;gap:48px}
+  .formflow-visual{aspect-ratio:5/4;max-height:420px}
+}
+
+/* ==========================================================================
+   QUEM SOMOS
+   ========================================================================== */
+.about{
+  position:relative;
+  z-index:2;
+  padding:140px 48px;
+  background:var(--noite-2);
+  border-top:1px solid var(--linha);
+  border-bottom:1px solid var(--linha);
+}
+.about-container{max-width:1340px;margin:0 auto}
+.about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:96px;align-items:start}
+.about-tag{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.24em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:24px;
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+}
+.about-tag::before{content:'';width:32px;height:1px;background:var(--creme)}
+.about h2{
+  font-family:var(--serif);
+  font-size:clamp(2rem, 4.2vw, 3.4rem);
+  font-weight:400;
+  line-height:1.08;
+  color:var(--offwhite);
+  letter-spacing:-.012em;
+}
+.about h2 strong{font-weight:500;color:var(--creme)}
+.about h2 em{font-style:italic;font-weight:300}
+.about-body p{
+  font-size:1.02rem;
+  color:var(--azul-suave);
+  line-height:1.75;
+  margin-bottom:24px;
+}
+.about-body p:last-child{margin-bottom:0}
+.about-body p strong{color:var(--offwhite);font-weight:500}
+@media(max-width:900px){
+  .about{padding:100px 20px}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+}
+
+/* ==========================================================================
+   MÉTODO LEADS EVERYDAY
+   ========================================================================== */
+.method{
+  position:relative;
+  z-index:2;
+  padding:160px 48px;
+  background:var(--noite);
+  overflow:hidden;
+}
+.method::before{
+  content:'';
+  position:absolute;
+  left:-10%; top:0;
+  width:60vh; height:60vh;
+  background:radial-gradient(circle, rgba(229,220,195,.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+.method-container{max-width:1340px;margin:0 auto;position:relative}
+.method-header{margin-bottom:96px;text-align:center}
+.method-tag{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.24em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:28px;
+  display:inline-flex;
+  gap:14px;
+  align-items:center;
+}
+.method-tag::before,.method-tag::after{content:'';width:42px;height:1px;background:var(--creme)}
+.method-title{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem, 5.2vw, 5rem);
+  font-weight:400;
+  line-height:1.05;
+  color:var(--offwhite);
+  letter-spacing:-.015em;
+  max-width:1100px;
+  margin:0 auto 32px;
+}
+.method-title strong{font-weight:500;color:var(--creme)}
+.method-title em{font-style:italic;font-weight:300}
+.method-intro{
+  font-size:1.05rem;
+  color:var(--azul-suave);
+  line-height:1.7;
+  max-width:680px;
+  margin:0 auto;
+}
+.pillars{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+}
+.pillar{
+  position:relative;
+  background:var(--grafite);
+  border:1px solid var(--linha);
+  border-radius:4px;
+  padding:48px 40px;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1), border-color .3s ease;
+  overflow:hidden;
+}
+.pillar::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(229,220,195,.06), transparent 60%);
+  opacity:0;
+  transition:opacity .4s ease;
+}
+.pillar:hover{transform:translateY(-4px);border-color:rgba(229,220,195,.4)}
+.pillar:hover::before{opacity:1}
+.pillar-num{
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.2em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:28px;
+  display:block;
+}
+.pillar h3{
+  font-family:var(--serif);
+  font-size:1.7rem;
+  font-weight:500;
+  color:var(--offwhite);
+  margin-bottom:16px;
+  letter-spacing:-.01em;
+  position:relative;
+}
+.pillar h3 em{font-style:italic;font-weight:300;color:var(--creme)}
+.pillar p{
+  font-size:.94rem;
+  color:var(--azul-suave);
+  line-height:1.7;
+  position:relative;
+}
+@media(max-width:760px){
+  .method{padding:100px 20px}
+  .pillars{grid-template-columns:1fr;gap:20px}
+  .pillar{padding:36px 28px}
+}
+
+/* ==========================================================================
+   PLANOS
+   ========================================================================== */
+.plans{
+  position:relative;
+  z-index:2;
+  padding:140px 48px;
+  background:var(--noite-2);
+  border-top:1px solid var(--linha);
+  border-bottom:1px solid var(--linha);
+}
+.plans-container{max-width:1340px;margin:0 auto}
+.plans-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:96px;align-items:center}
+.plans-tag{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.24em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:24px;
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+}
+.plans-tag::before{content:'';width:32px;height:1px;background:var(--creme)}
+.plans h2{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem, 4.6vw, 3.8rem);
+  font-weight:400;
+  line-height:1.05;
+  color:var(--offwhite);
+  letter-spacing:-.012em;
+  margin-bottom:28px;
+}
+.plans h2 strong{font-weight:500;color:var(--creme)}
+.plans h2 em{font-style:italic;font-weight:300}
+.plans-intro{
+  font-size:1rem;
+  color:var(--azul-suave);
+  line-height:1.7;
+  margin-bottom:0;
+}
+.plans-visual{
+  position:relative;
+  aspect-ratio:1/1.05;
+  border:1px solid var(--linha);
+  border-radius:4px;
+  background:linear-gradient(135deg, var(--grafite), var(--noite));
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:48px;
+  overflow:hidden;
+}
+.plans-visual::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 30% 20%, rgba(229,220,195,.08), transparent 60%);
+}
+.plans-tier{
+  position:relative;
+  padding:20px 0;
+  border-bottom:1px solid var(--linha);
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+}
+.plans-tier:last-child{border-bottom:none}
+.plans-tier-name{
+  font-family:var(--serif);
+  font-size:1.3rem;
+  font-weight:400;
+  color:var(--offwhite);
+  font-style:italic;
+}
+.plans-tier-desc{
+  font-family:var(--mono);
+  font-size:.7rem;
+  letter-spacing:.16em;
+  color:var(--azul-mudo);
+  text-transform:uppercase;
+}
+@media(max-width:900px){
+  .plans{padding:100px 20px}
+  .plans-grid{grid-template-columns:1fr;gap:48px}
+  .plans-visual{aspect-ratio:auto;padding:36px 28px}
+}
+
+/* ==========================================================================
+   TIME / CTA SECONDÁRIO
+   ========================================================================== */
+.team{
+  position:relative;
+  z-index:2;
+  padding:160px 48px;
+  background:var(--noite);
+  text-align:center;
+}
+.team-container{max-width:1100px;margin:0 auto}
+.team-tag{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.24em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:28px;
+  display:inline-flex;
+  gap:14px;
+  align-items:center;
+}
+.team-tag::before,.team-tag::after{content:'';width:42px;height:1px;background:var(--creme)}
+.team h2{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem, 5vw, 4.4rem);
+  font-weight:400;
+  line-height:1.05;
+  color:var(--offwhite);
+  letter-spacing:-.015em;
+  margin-bottom:32px;
+}
+.team h2 strong{font-weight:500;color:var(--creme)}
+.team h2 em{font-style:italic;font-weight:300}
+.team p{
+  font-size:1.05rem;
+  color:var(--azul-suave);
+  line-height:1.75;
+  max-width:700px;
+  margin:0 auto 48px;
+}
+.team-online{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.18em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:32px;
+}
+.team-online .dot{
+  width:8px; height:8px;
+  border-radius:50%;
+  background:var(--creme);
+  animation:pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.5;transform:scale(1.3)}
+}
+@media(max-width:760px){.team{padding:100px 20px}}
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq{
+  position:relative;
+  z-index:2;
+  padding:140px 48px;
+  background:var(--noite-2);
+  border-top:1px solid var(--linha);
+}
+.faq-container{max-width:1100px;margin:0 auto}
+.faq-header{text-align:center;margin-bottom:80px}
+.faq-tag{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.24em;
+  color:var(--creme);
+  text-transform:uppercase;
+  margin-bottom:28px;
+  display:inline-flex;
+  gap:14px;
+  align-items:center;
+}
+.faq-tag::before,.faq-tag::after{content:'';width:42px;height:1px;background:var(--creme)}
+.faq h2{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem, 4.8vw, 4rem);
+  font-weight:400;
+  line-height:1.05;
+  color:var(--offwhite);
+  letter-spacing:-.012em;
+  margin-bottom:20px;
+}
+.faq h2 em{font-style:italic;color:var(--creme)}
+.faq-sub{
+  font-size:1rem;
+  color:var(--azul-suave);
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.1rem;
+}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{
+  border-bottom:1px solid var(--linha);
+}
+.faq-item:first-child{border-top:1px solid var(--linha)}
+.faq-q{
+  width:100%;
+  background:none;
+  border:none;
+  text-align:left;
+  padding:28px 0;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:32px;
+  font-family:var(--serif);
+  font-size:clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight:400;
+  color:var(--offwhite);
+  transition:color .25s ease;
+}
+.faq-q:hover{color:var(--creme)}
+.faq-q-icon{
+  flex-shrink:0;
+  width:28px; height:28px;
+  position:relative;
+}
+.faq-q-icon::before,.faq-q-icon::after{
+  content:'';
+  position:absolute;
+  background:var(--creme);
+  transition:transform .3s ease;
+}
+.faq-q-icon::before{
+  top:50%; left:0; right:0;
+  height:1px;
+  transform:translateY(-50%);
+}
+.faq-q-icon::after{
+  left:50%; top:0; bottom:0;
+  width:1px;
+  transform:translateX(-50%);
+}
+.faq-item.open .faq-q-icon::after{transform:translateX(-50%) rotate(90deg)}
+.faq-a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .4s cubic-bezier(.2,.8,.2,1);
+}
+.faq-a-inner{
+  padding:0 0 32px;
+  font-size:.98rem;
+  line-height:1.75;
+  color:var(--azul-suave);
+  max-width:920px;
+}
+.faq-item.open .faq-a{max-height:400px}
+@media(max-width:760px){.faq{padding:100px 20px}}
+
+/* ==========================================================================
+   FINAL CTA
+   ========================================================================== */
+.cta-final{
+  position:relative;
+  z-index:2;
+  padding:160px 48px;
+  background:var(--noite);
+  text-align:center;
+  border-top:1px solid var(--linha);
+}
+.cta-final-container{max-width:1000px;margin:0 auto}
+.cta-final h2{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem, 5.6vw, 5.2rem);
+  font-weight:400;
+  line-height:1.02;
+  color:var(--offwhite);
+  letter-spacing:-.02em;
+  margin-bottom:32px;
+}
+.cta-final h2 em{font-style:italic;color:var(--creme);font-weight:300}
+.cta-final p{
+  font-size:1.1rem;
+  color:var(--azul-suave);
+  line-height:1.7;
+  margin-bottom:56px;
+  max-width:620px;
+  margin-left:auto;
+  margin-right:auto;
+}
+@media(max-width:760px){.cta-final{padding:100px 20px}}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer{
+  position:relative;
+  z-index:2;
+  background:var(--noite-2);
+  padding:96px 48px 40px;
+  border-top:1px solid var(--linha);
+}
+.footer-container{max-width:1340px;margin:0 auto}
+.footer-top{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:80px;
+  padding-bottom:64px;
+  border-bottom:1px solid var(--linha);
+}
+.footer-brand{
+  font-family:var(--serif);
+  font-size:2rem;
+  font-weight:500;
+  color:var(--offwhite);
+  margin-bottom:20px;
+  letter-spacing:.02em;
+}
+.footer-brand em{font-style:italic;color:var(--creme);font-weight:400}
+.footer-tag{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.1rem;
+  color:var(--azul-suave);
+  line-height:1.6;
+  max-width:380px;
+}
+.footer-col h4{
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--creme);
+  margin-bottom:20px;
+  font-weight:500;
+}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:12px}
+.footer-col a{
+  font-size:.92rem;
+  color:var(--azul-suave);
+  transition:color .25s ease;
+}
+.footer-col a:hover{color:var(--creme)}
+.footer-bottom{
+  padding-top:32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.1em;
+  color:var(--azul-mudo);
+  text-transform:uppercase;
+  flex-wrap:wrap;
+  gap:16px;
+}
+@media(max-width:900px){
+  .footer{padding:64px 20px 32px}
+  .footer-top{grid-template-columns:1fr;gap:48px}
+}
+
+/* ==========================================================================
+   SCROLL REVEAL
+   ========================================================================== */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ==========================================================================
+     NAV
+     ========================================================================== -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">Colonna <em>company</em></a>
+  <div class="nav-links">
+    <a href="#metodo">Método</a>
+    <a href="#sobre">Quem somos</a>
+    <a href="#planos">Planos</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <!-- [EDIT-NAV-CTA] aponta para Typeform/form de qualificação -->
+  <a href="#" class="nav-cta">Quero mais informações</a>
+</nav>
+
+<!-- ==========================================================================
+     HERO
+     ========================================================================== -->
+<section class="hero">
+  <div class="hero-container">
+    <span class="hero-eyebrow reveal">Marketing para contractors brasileiros nos EUA</span>
+    <h1 class="hero-title reveal">
+      Líder em <strong>geração de leads</strong> para <strong>contractors brasileiros nos EUA.</strong>
+    </h1>
+    <p class="hero-sub reveal">
+      Somos a infraestrutura invisível dos maiores contractors brasileiros da América. Top do Google, agenda cheia, ticket alto. Todos os dias.
+    </p>
+    <div class="hero-actions reveal">
+      <!-- [EDIT-HERO-CTA] -->
+      <a href="#" class="btn-primary">
+        Quero mais informações
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+        </svg>
+      </a>
+      <a href="#metodo" class="btn-ghost">Ver o método</a>
+    </div>
+
+    <div class="hero-stats reveal">
+      <div>
+        <div class="stat-num">+300</div>
+        <div class="stat-label">Empresas atendidas</div>
+      </div>
+      <div>
+        <div class="stat-num">3 anos</div>
+        <div class="stat-label">Construindo o método</div>
+      </div>
+      <div>
+        <div class="stat-num">1 nicho</div>
+        <div class="stat-label">Construção · US</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     MARQUEE
+     ========================================================================== -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>Cresça seu negócio</span><span>Cresça seu negócio</span><span>Cresça seu negócio</span><span>Cresça seu negócio</span><span>Cresça seu negócio</span><span>Cresça seu negócio</span><span>Cresça seu negócio</span><span>Cresça seu negócio</span>
+  </div>
+  <div class="marquee reverse">
+    <span>Mais leads</span><span>Mais leads</span><span>Mais leads</span><span>Mais leads</span><span>Mais leads</span><span>Mais leads</span><span>Mais leads</span><span>Mais leads</span><span>Mais leads</span><span>Mais leads</span>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     ALERT — urgency
+     ========================================================================== -->
+<section class="alert">
+  <div class="alert-container reveal">
+    <span class="alert-eyebrow">Aviso</span>
+    <h2 class="alert-title">
+      <strong>Não saia agora.</strong><br/>
+      Faltam <em>poucos segundos</em> para a sua empresa de construção <strong>mudar.</strong>
+    </h2>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FORMFLOW — como funciona
+     ========================================================================== -->
+<section class="formflow">
+  <div class="formflow-container">
+    <div class="reveal">
+      <span class="formflow-eyebrow">Como funciona</span>
+      <h2>Complete o <em>formulário.</em></h2>
+      <p class="formflow-intro">
+        Forneça suas informações no formulário ao lado. Garantimos a segurança total dos seus dados — usados apenas para contato direto com nosso time.
+      </p>
+
+      <div class="formflow-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Preencha em 2 minutos</h3>
+            <p>Conta pra gente em que estágio sua operação está hoje e onde você quer chegar. Sem rodeios.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Receba uma ligação personalizada</h3>
+            <p>Em até 5 minutos no horário comercial, um especialista entra em contato direto pra agendar a reunião mais importante do seu ano.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Diagnóstico estratégico</h3>
+            <p>Na call você sai com clareza do que travou seu crescimento e o caminho concreto pra destravar. Independente de virar cliente ou não.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formflow-visual reveal">
+      <div class="formflow-visual-content">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="v-label">Resposta em até 5 min</div>
+        <div class="v-text">"O melhor investimento que fizemos foi parar de gastar com marketing genérico."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     QUEM SOMOS
+     ========================================================================== -->
+<section class="about" id="sobre">
+  <div class="about-container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="about-tag">Quem somos</span>
+        <h2>
+          Líder em <strong>geração de leads</strong> com <em>homeowner</em> para <strong>contractors brasileiros nos EUA.</strong>
+        </h2>
+      </div>
+      <div class="about-body reveal">
+        <p>
+          Na <strong>Colonna Company</strong>, não somos apenas uma agência. Somos a infraestrutura digital especializada em contractors da construção nos Estados Unidos. Nascemos de dentro do problema — com família no nicho da construção americana — pra tirar o contractor brasileiro da dependência de indicação e colocá-lo num sistema previsível de aquisição de clientes.
+        </p>
+        <p>
+          Com 3 anos de mercado e mais de 300 empresas atendidas em um único nicho, a Colonna é a parceira estratégica que sua empresa precisa para aparecer no Google, gerar estimates com homeowner e crescer com previsibilidade.
+        </p>
+        <p>
+          Nosso time especializado — <strong>estrategista de posicionamento Google, webdesigner com foco em UX americano, copywriter, especialista em Google LSA e GMB, produção cinematográfica e gestor de relacionamento</strong> — trabalha em sinergia pra garantir que cada pilar da sua presença digital esteja posicionado para gerar demanda real e recorrente.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     [PLACEHOLDER] DEPOIMENTOS — preenchido quando o ator for contratado
+     <section class="testimonials" id="depoimentos"> ... </section>
+     ========================================================================== -->
+
+<!-- ==========================================================================
+     MÉTODO LEADS EVERYDAY
+     ========================================================================== -->
+<section class="method" id="metodo">
+  <div class="method-container">
+    <div class="method-header">
+      <span class="method-tag reveal">O método Leads Everyday</span>
+      <h2 class="method-title reveal">
+        Existe um <strong>método comprovado</strong> para que seu negócio <em>nunca</em> pare de <strong>vender.</strong>
+      </h2>
+      <p class="method-intro reveal">
+        Quatro pilares que constroem uma máquina de aquisição independente de indicação, sazonalidade ou esforço heroico do dono.
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="pillar-num">01 · Visibilidade</span>
+        <h3>Top 1 no <em>Google</em></h3>
+        <p>Posicionamento orgânico, Google LSA e Google My Business otimizados pra que o homeowner encontre você antes do concorrente. O cliente que pesquisa "contractor near me" precisa ver o seu nome primeiro.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">02 · Conversão</span>
+        <h3>Landing Page <em>profissional</em></h3>
+        <p>Site com foco em UX americano e arquitetura de conversão. Não é cartão de visita digital — é a ferramenta que transforma tráfego em estimate marcado, com copy estratégica e provas sociais bem posicionadas.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">03 · Autoridade</span>
+        <h3>Social <em>Marketing</em></h3>
+        <p>Conteúdo cinematográfico que constrói reputação local antes do primeiro contato. Reels, ADs e posts criados pra trabalhar a percepção de qualidade — não pra encher feed bonito sem retorno.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">04 · Identidade</span>
+        <h3>Branding <em>completo</em></h3>
+        <p>Logo, paleta, tipografia e tom de voz que comunicam o ticket alto que você quer cobrar. Marca premium não se improvisa — se constrói no detalhe, da fachada do truck ao envelope do orçamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PLANOS
+     ========================================================================== -->
+<section class="plans" id="planos">
+  <div class="plans-container">
+    <div class="plans-grid">
+      <div class="reveal">
+        <span class="plans-tag">Planos personalizados</span>
+        <h2>
+          Você <strong>escolhe</strong> a <em>solução certa</em> para a fase que seu negócio vive <strong>hoje.</strong>
+        </h2>
+        <p class="plans-intro">
+          Oferecemos serviços em planos flexíveis. Você escolhe conforme sua condição atual — o mais importante é continuar apostando em estratégias que trazem resultado, no ritmo que sua operação aguenta.
+        </p>
+      </div>
+
+      <div class="plans-visual reveal">
+        <div class="plans-tier">
+          <span class="plans-tier-name">Starter</span>
+          <span class="plans-tier-desc">Primeiros leads</span>
+        </div>
+        <div class="plans-tier">
+          <span class="plans-tier-name">Growth</span>
+          <span class="plans-tier-desc">Operação previsível</span>
+        </div>
+        <div class="plans-tier">
+          <span class="plans-tier-name">Scale</span>
+          <span class="plans-tier-desc">Domínio do mercado</span>
+        </div>
+        <div class="plans-tier">
+          <span class="plans-tier-name">Colonna X</span>
+          <span class="plans-tier-desc">Acima de R$200k/mês</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     RECEBA UM TIME EXCLUSIVO
+     ========================================================================== -->
+<section class="team">
+  <div class="team-container">
+    <span class="team-tag reveal">Receba um time exclusivo</span>
+    <h2 class="reveal">
+      A <strong>assessoria Colonna</strong> estrutura o marketing da sua empresa de construção com base na sua <em>necessidade.</em>
+    </h2>
+    <p class="reveal">
+      Tenha um time de especialistas ao seu lado ou terceirize totalmente seu marketing e setor comercial com a Colonna. Sem dor de cabeça com contratação, gestão de equipe, riscos trabalhistas ou burocracias — você foca no seu negócio, a gente foca em fazer ele crescer.
+    </p>
+    <div class="team-online reveal">
+      <span class="dot"></span>
+      Especialistas online agora
+    </div>
+    <div class="reveal" style="margin-top:24px">
+      <!-- [EDIT-TEAM-CTA] -->
+      <a href="#" class="btn-primary">
+        Quero mais informações
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+          <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FAQ
+     ========================================================================== -->
+<section class="faq" id="faq">
+  <div class="faq-container">
+    <div class="faq-header reveal">
+      <span class="faq-tag">Perguntas frequentes</span>
+      <h2>Ficou com alguma <em>dúvida?</em></h2>
+      <p class="faq-sub">Talvez ela esteja aqui.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>O que exatamente a Colonna faz?</span>
+          <span class="faq-q-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Somos uma assessoria especializada em marketing para construção. Ajudamos contractors, empresas de flooring, remodeling, roofing, fencing e outros a gerarem mais estimates com homeowner através de posicionamento no Meta e Google, site profissional com foco em conversão, produção cinematográfica para redes sociais e estruturação do processo comercial.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>Posso cancelar quando quiser?</span>
+          <span class="faq-q-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Sim, você pode cancelar sua assinatura a qualquer momento, sem multa ou burocracia. Trabalhamos pra você ficar pelo resultado, não pelo contrato.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>Em quanto tempo vou ver resultados?</span>
+          <span class="faq-q-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Depende do estágio atual do seu negócio, estrutura interna e investimento. Mas, na maioria dos casos, nossos clientes começam a sentir impacto positivo nas vendas em 30 a 60 dias.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>Vocês atendem qualquer tipo de contractor?</span>
+          <span class="faq-q-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Atendemos desde pequenas operações até grandes redes, desde que estejam dispostas a seguir um plano estratégico de crescimento. Temos um núcleo especializado para negócios que faturam acima de R$200k/mês: o Colonna X.
+        </div></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">
+          <span>A Colonna cuida do meu Instagram e redes sociais?</span>
+          <span class="faq-q-icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Sim, mas com foco em performance. Não somos uma empresa de "post bonitinho" — nosso objetivo é transformar conteúdo e anúncios em vendas reais. Se não gerar resultado, não faz sentido estar ali.
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FINAL CTA
+     ========================================================================== -->
+<section class="cta-final">
+  <div class="cta-final-container reveal">
+    <h2>Pare de <em>correr atrás</em> de cliente.</h2>
+    <p>Preencha o formulário e em até 5 minutos um especialista vai te ligar pra entender seu cenário e desenhar o próximo passo.</p>
+    <!-- [EDIT-FINAL-CTA] -->
+    <a href="#" class="btn-primary">
+      Quero mais informações
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Colonna <em>company</em></div>
+        <p class="footer-tag">A infraestrutura digital dos contractors brasileiros que escolheram parar de depender de indicação.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Método</h4>
+        <ul>
+          <li><a href="#metodo">Top 1 no Google</a></li>
+          <li><a href="#metodo">Landing Page</a></li>
+          <li><a href="#metodo">Social Marketing</a></li>
+          <li><a href="#metodo">Branding</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#sobre">Quem somos</a></li>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <!-- [EDIT-FOOTER-INSTA] -->
+          <li><a href="#">@colonna.company</a></li>
+          <li><a href="mailto:hello@colonnacompany.com">hello@colonnacompany.com</a></li>
+          <li><a href="#">Boston, Massachusetts</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Colonna Company LLC · Todos os direitos reservados</span>
+      <span>Feito por brasileiros, para brasileiros.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ==========================================================================
+     SCRIPTS
+     ========================================================================== -->
+<script>
+// Nav scroll state
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
