@@ -565,45 +565,31 @@ strong{font-weight:700}
   background-clip:text;
   color:transparent;
 }
-.video-placeholder{
-  max-width:880px;
+.testimonial-video-wrap{
+  max-width:380px;
   margin:0 auto;
-  aspect-ratio:16/9;
-  background:var(--noite-3);
-  border:1px solid var(--linha);
-  border-radius:18px;
-  display:flex; align-items:center; justify-content:center;
-  flex-direction:column;
-  gap:18px;
-  position:relative;
+  border-radius:20px;
   overflow:hidden;
-}
-.video-placeholder::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at center, rgba(229,220,195,.04), transparent 60%);
-}
-.play-icon{
-  width:80px; height:80px;
-  border:2px solid var(--creme);
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  transition:all .3s ease;
-}
-.play-icon svg{margin-left:4px}
-.video-placeholder:hover .play-icon{
-  background:var(--creme);
-  transform:scale(1.05);
-}
-.video-placeholder:hover .play-icon svg path{fill:var(--noite)}
-.video-placeholder-text{
-  font-family:var(--mono);
-  font-size:.78rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--azul-mudo);
   position:relative;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.5),
+    0 0 0 1px var(--linha),
+    0 0 60px rgba(229,220,195,.06);
+  background:var(--noite-3);
+}
+.testimonial-video{
+  display:block;
+  width:100%;
+  aspect-ratio:9/16;
+  background:var(--noite-3);
+  border-radius:20px;
+  cursor:pointer;
+}
+.testimonial-video::-webkit-media-controls-panel{
+  background:linear-gradient(transparent, rgba(14,17,23,.7));
+}
+@media(max-width:760px){
+  .testimonial-video-wrap{max-width:300px}
 }
 
 /* ==========================================================================
@@ -1723,13 +1709,16 @@ strong{font-weight:700}
       Mais de <strong>300 contractors</strong> com <em>resultados.</em><br/>
       Isso é <strong>Colonna.</strong>
     </h2>
-    <div class="video-placeholder reveal">
-      <div class="play-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-          <path d="M8 5V19L19 12L8 5Z" fill="#E5DCC3"/>
-        </svg>
-      </div>
-      <span class="video-placeholder-text">Vídeo em produção</span>
+   <div class="testimonial-video-wrap reveal">
+      <video 
+        class="testimonial-video"
+        controls
+        playsinline
+        preload="metadata"
+        poster="colonna-depoimento-poster.jpg">
+        <source src="colonna-depoimento.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
     </div>
   </div>
 </section>
