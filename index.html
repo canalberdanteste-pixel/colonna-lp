@@ -1418,6 +1418,15 @@ strong{font-weight:700}
       <p class="form-sub">Preencha o formulário e em até 5 minutos um especialista vai te ligar pra entender seu cenário.</p>
 
       <form id="leadForm" novalidate>
+        <!-- Campos de rastreamento (ocultos) — preenchidos automaticamente, invisíveis ao visitante -->
+        <input type="hidden" id="f-utm_source"   name="utm_source">
+        <input type="hidden" id="f-utm_medium"   name="utm_medium">
+        <input type="hidden" id="f-utm_campaign" name="utm_campaign">
+        <input type="hidden" id="f-utm_content"  name="utm_content">
+        <input type="hidden" id="f-utm_term"     name="utm_term">
+        <input type="hidden" id="f-fbclid"       name="fbclid">
+        <input type="hidden" id="f-gclid"        name="gclid">
+
         <div class="form-grid">
           <div class="form-field form-field--full">
             <label class="form-label" for="f-nome">Nome completo <span class="req">*</span></label>
@@ -1427,6 +1436,11 @@ strong{font-weight:700}
           <div class="form-field form-field--full">
             <label class="form-label" for="f-telefone">Telefone (WhatsApp) <span class="req">*</span></label>
             <input class="form-input" type="tel" id="f-telefone" name="telefone" required autocomplete="tel" placeholder="+1 (555) 555-5555">
+          </div>
+
+          <div class="form-field form-field--full">
+            <label class="form-label" for="f-email">E-mail <span class="req">*</span></label>
+            <input class="form-input" type="email" id="f-email" name="email" required autocomplete="email" placeholder="seu@email.com">
           </div>
 
           <div class="form-field form-field--full">
@@ -2050,8 +2064,8 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 // FORM MODAL — Lead capture
 // ============================================================
 
-// 👉 COLE AQUI A URL DO WEB APP DO APPS SCRIPT (passo 5 do setup):
-const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwXC_sx4thTaFOEQXilI76zXhkKqyVo6AKqGOakzlW-pLs2RcodtLHLDURoyUGZBat55g/exec";
+// 👉 Webhook do Make — recebe os leads do formulário (Colonna)
+const WEBHOOK_URL = "https://hook.us2.make.com/s1xh1h532gmd0ima05rmmildgqjy5rcp";
 
 const overlay = document.getElementById('formOverlay');
 const modal = document.getElementById('formModal');
@@ -2060,6 +2074,19 @@ const form = document.getElementById('leadForm');
 const submitBtn = document.getElementById('formSubmit');
 const submitText = submitBtn.querySelector('.form-submit-text');
 const errorEl = document.getElementById('formError');
+
+// ── Captura de UTMs e IDs de clique (rastreamento) ──────────
+// Lê os parâmetros da URL e preenche os campos ocultos do formulário.
+// Invisível para o visitante. Roda uma vez quando a página carrega.
+(function captureTracking(){
+  var params = new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid']
+    .forEach(function(key){
+      var el  = document.getElementById('f-' + key);
+      var val = params.get(key);
+      if (el && val) el.value = val;
+    });
+})();
 
 function openForm() {
   overlay.classList.add('open');
